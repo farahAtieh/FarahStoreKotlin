@@ -2,6 +2,7 @@ package com.example.farahstorekotlin.presentation.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.bumptech.glide.RequestManager
 import com.example.farahstorekotlin.data.model.StoreItem
 import com.example.farahstorekotlin.domain.usecase.GetProductsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -11,7 +12,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel
-    @Inject constructor(private val productsUseCase: GetProductsUseCase): ViewModel() {
+    @Inject constructor(
+        val requestManager: RequestManager,
+        private val productsUseCase: GetProductsUseCase): ViewModel() {
 
     val storeItems = MutableLiveData<List<StoreItem>>()
 

@@ -8,7 +8,9 @@ data class StoreItem(
     @SerializedName("title")
     var itemName: String,
     @SerializedName("price")
-    var itemPrice: Double
+    var itemPrice: Double,
+    @SerializedName("image")
+    var imageUrl: String,
 ){
     fun getItemPriceAsString(): String = itemPrice.toString()
 }
