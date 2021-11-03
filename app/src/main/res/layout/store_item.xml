@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.example.farahstorekotlin.data.model.StoreItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewStoreItem"
+            android:layout_width="100dp"
+            android:layout_height="92dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textViewStoreItemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="52dp"
+            android:text="Item: "
+            app:layout_constraintStart_toEndOf="@+id/imageViewStoreItem"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewStoreItemPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Price:"
+            app:layout_constraintStart_toStartOf="@+id/textViewStoreItemName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemName" />
+
+        <TextView
+            android:id="@+id/textViewStoreItemNameValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="@{item.itemName}"
+            app:layout_constraintStart_toEndOf="@+id/textViewStoreItemName"
+            app:layout_constraintTop_toTopOf="@+id/textViewStoreItemName"
+            tools:text="Ring" />
+
+        <TextView
+            android:id="@+id/textViewStoreItemPriceValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:text="@{item.itemPriceAsString}"
+            tools:text="5.20 JOD"
+            app:layout_constraintStart_toEndOf="@+id/textViewStoreItemPrice"
+            app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemNameValue" />
+
+        <Button
+            android:id="@+id/buttonStoreItemBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="BUY"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewStoreItem" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
