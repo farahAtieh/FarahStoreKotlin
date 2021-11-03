@@ -7,18 +7,27 @@
         <variable
             name="item"
             type="com.example.farahstorekotlin.data.model.StoreItem" />
+
+        <variable
+            name="viewModel"
+            type="com.example.farahstorekotlin.presentation.viewModel.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageViewStoreItem"
             android:layout_width="100dp"
             android:layout_height="92dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="10dp"
+            app:setGlideRequestManager="@{viewModel.requestManager}"
+            app:setUrl="@{item.imageUrl}"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
@@ -27,9 +36,9 @@
             android:id="@+id/textViewStoreItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="52dp"
-            android:text="Item: "
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:text="@string/item"
             app:layout_constraintStart_toEndOf="@+id/imageViewStoreItem"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,9 +47,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Price:"
+            android:layout_marginBottom="20dp"
+            android:text="@string/price"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textViewStoreItemName"
-            app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemName" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemName"
+            app:layout_constraintVertical_bias="0.366" />
 
         <TextView
             android:id="@+id/textViewStoreItemNameValue"
@@ -48,6 +60,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:text="@{item.itemName}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textViewStoreItemName"
             app:layout_constraintTop_toTopOf="@+id/textViewStoreItemName"
             tools:text="Ring" />
@@ -57,23 +71,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="16dp"
             android:text="@{item.itemPriceAsString}"
-            tools:text="5.20 JOD"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewStoreItemPrice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textViewStoreItemPrice"
-            app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemNameValue" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemNameValue"
+            app:layout_constraintVertical_bias="1.0"
+            tools:text="5.20 JOD" />
 
         <Button
             android:id="@+id/buttonStoreItemBuy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="BUY"
-            android:layout_marginBottom="10dp"
+            android:text="@string/buy"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewStoreItem" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemPriceValue" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

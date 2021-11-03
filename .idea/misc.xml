@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/FrhRepository/FarahStoreKotlin/app/src/main/res/drawable/ic_placeholder_square.xml" value="0.17916666666666667" />
         <entry key="..\:/FrhRepository/FarahStoreKotlin/app/src/main/res/layout/activity_main.xml" value="0.11614583333333334" />
         <entry key="..\:/FrhRepository/FarahStoreKotlin/app/src/main/res/layout/fragment_home.xml" value="0.13020833333333334" />
         <entry key="..\:/FrhRepository/FarahStoreKotlin/app/src/main/res/layout/store_item.xml" value="0.2164855072463768" />
