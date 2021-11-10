@@ -1,13 +1,11 @@
-package com.example.farahstorekotlin.domain.repository
+package com.example.farahstorekotlin.data.db.transformer
 
 import com.example.farahstorekotlin.data.model.StoreItem
 import io.reactivex.rxjava3.core.Flowable
 
-interface StoreRepository {
+interface StoreTransformer {
 
-    fun getStoresItem(): Flowable<List<StoreItem>>
-
-    fun addItemToFav(storeItem: StoreItem)
+    fun addItemToFav(storeItem:StoreItem)
 
     fun deleteItemFromFav(id: Int)
 

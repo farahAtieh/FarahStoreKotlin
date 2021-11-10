@@ -14,25 +14,27 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewHomeFragmentStoreItems"
+            android:id="@+id/recyclerViewHomeFragmentFavStoreItems"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/store_item" />
+            tools:listitem="@layout/fav_store_item" />
 
         <Button
-            android:id="@+id/buttonGoToFav"
+            android:id="@+id/buttonGoToHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="28dp"
-            android:text="@string/go_to_fav"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="32dp"
+            android:text="@string/go_to_home"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerViewHomeFragmentFavStoreItems"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
