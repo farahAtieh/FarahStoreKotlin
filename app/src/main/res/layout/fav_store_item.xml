@@ -85,21 +85,12 @@
             android:id="@+id/buttonStoreItemBuy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/buy"
+            android:text="@string/delete"
+            android:onClick="@{()-> viewModel.deleteItemFromFav(item.id)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemPriceValue"
             app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/buttonStoreItemFavFilled"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_favorite_fill"
-            android:onClick="@{()-> viewModel.addItemToFav(item)}"
-            app:layout_constraintBottom_toTopOf="@+id/textViewStoreItemNameValue"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

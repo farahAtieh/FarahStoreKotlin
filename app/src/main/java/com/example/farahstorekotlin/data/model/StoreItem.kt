@@ -1,5 +1,6 @@
 package com.example.farahstorekotlin.data.model
 
+import androidx.databinding.ObservableBoolean
 import com.google.gson.annotations.SerializedName
 
 data class StoreItem(
