@@ -3,4 +3,6 @@
     <string name="item">item</string>
     <string name="price">Price:</string>
     <string name="buy">Buy</string>
+    <string name="go_to_fav">go to fav</string>
+    <string name="delete">delete</string>
 </resources>

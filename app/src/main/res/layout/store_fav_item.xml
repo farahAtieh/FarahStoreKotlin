@@ -19,7 +19,7 @@
         android:layout_margin="10dp">
 
         <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageViewStoreItem"
+            android:id="@+id/imageViewFavStoreItem"
             android:layout_width="100dp"
             android:layout_height="92dp"
             android:layout_marginStart="10dp"
@@ -33,25 +33,25 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/textViewStoreItemName"
+            android:id="@+id/textViewFavStoreItemName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             android:layout_marginTop="40dp"
             android:text="@string/item"
-            app:layout_constraintStart_toEndOf="@+id/imageViewStoreItem"
+            app:layout_constraintStart_toEndOf="@+id/imageViewFavStoreItem"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewStoreItemPrice"
+            android:id="@+id/textViewFavStoreItemPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:layout_marginBottom="20dp"
             android:text="@string/price"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/textViewStoreItemName"
-            app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemName"
+            app:layout_constraintStart_toStartOf="@+id/textViewFavStoreItemName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewFavStoreItemName"
             app:layout_constraintVertical_bias="0.366" />
 
         <TextView
@@ -62,8 +62,8 @@
             android:text="@{item.itemName}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textViewStoreItemName"
-            app:layout_constraintTop_toTopOf="@+id/textViewStoreItemName"
+            app:layout_constraintStart_toEndOf="@+id/textViewFavStoreItemName"
+            app:layout_constraintTop_toTopOf="@+id/textViewFavStoreItemName"
             tools:text="Ring" />
 
         <TextView
@@ -73,20 +73,20 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="@{item.itemPriceAsString}"
-            app:layout_constraintBottom_toBottomOf="@+id/textViewStoreItemPrice"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewFavStoreItemPrice"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/textViewStoreItemPrice"
+            app:layout_constraintStart_toEndOf="@+id/textViewFavStoreItemPrice"
             app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemNameValue"
             app:layout_constraintVertical_bias="1.0"
             tools:text="5.20 JOD" />
 
         <Button
-            android:id="@+id/buttonStoreItemBuy"
+            android:id="@+id/buttonStoreFavItemDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/buy"
-            android:onClick="@{() -> viewModel.addItemToFav(item)}"
+            android:text="@string/delete"
+            android:onClick="@{() -> viewModel.deleteItemFromFav(item)}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewStoreItemPriceValue" />

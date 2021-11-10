@@ -1,6 +1,7 @@
 package com.example.farahstorekotlin.application.di
 
 import com.example.farahstorekotlin.data.api.ProductsEndPoint
+import com.example.farahstorekotlin.data.db.transformer.StoreItemTransformer
 import com.example.farahstorekotlin.data.repository.StoreRepositoryImp
 import com.example.farahstorekotlin.domain.repository.StoreRepository
 import dagger.Module
@@ -13,7 +14,7 @@ import dagger.hilt.components.SingletonComponent
 class RepositoryModule {
 
     @Provides
-    fun provideStoreRepository(productsEndPoint: ProductsEndPoint): StoreRepository =
-        StoreRepositoryImp(productsEndPoint)
+    fun provideStoreRepository(productsEndPoint: ProductsEndPoint, storeItemTransformer: StoreItemTransformer): StoreRepository =
+        StoreRepositoryImp(productsEndPoint, storeItemTransformer)
 
 }
